@@ -17,3 +17,17 @@
   font-stretch: normal;
   font-display: swap;
 }
+
+:root {
+  --background-color: #f5f5f5;
+  --primary-text-color: #000000;
+  --table-header-background-color: #2c3e50;
+  --table-header-text-color: #ffffff;
+  --table-row-odd-color: #ffffff;
+  --table-row-even-color: #ecf0f1;
+  --grey-color: #b0bec5;
+}
+
+body {
+  @apply text-primaryTextColor bg-backgroundColor min-h-screen font-roboto-regular text-lg;
+}
