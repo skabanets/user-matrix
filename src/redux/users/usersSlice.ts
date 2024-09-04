@@ -37,4 +37,4 @@ const userSLice = createSlice({
 });
 
 export const usersReducer = userSLice.reducer;
-export const { selectUsers } = userSLice.selectors;
+export const { selectUsers, selectIsLoading } = userSLice.selectors;
