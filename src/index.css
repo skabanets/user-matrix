@@ -29,12 +29,12 @@
 }
 
 body {
-  @apply text-primaryTextColor bg-primaryBgColor min-h-screen font-roboto-regular text-lg;
+  @apply min-h-screen bg-primaryBgColor font-roboto-regular text-lg text-primaryTextColor;
 }
 
 th,
 td {
-  @apply border border-white;
+  @apply border border-white p-2;
 }
 
 tbody tr {
