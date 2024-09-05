@@ -1,10 +1,11 @@
 import { MdOutlineCancel } from "react-icons/md";
 
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
-import { type Filters, selectFilters, updateFilters } from "../../redux/users/usersSlice";
+import { selectFilters, updateFilters } from "../../redux/users/usersSlice";
+import type { Filter } from "../../types";
 
 interface SearchFieldProps {
-  field: keyof Filters;
+  field: keyof Filter;
 }
 
 export const SearchField = ({ field }: SearchFieldProps) => {

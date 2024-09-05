@@ -1,18 +1,11 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 import { fetchUsers } from "./usersOperations";
-import type { User } from "../../types/User";
-
-export interface Filters {
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-}
+import type { Filter, User } from "../../types";
 
 interface UserSlice {
   users: User[];
-  filters: Filters;
+  filters: Filter;
   isLoading: boolean;
 }
 
@@ -31,7 +24,7 @@ const userSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    updateFilters: (state, action: PayloadAction<{ field: keyof Filters; value: string }>) => {
+    updateFilters: (state, action: PayloadAction<{ field: keyof Filter; value: string }>) => {
       state.filters[action.payload.field] = action.payload.value;
     },
   },
