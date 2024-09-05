@@ -2,12 +2,12 @@ import { useEffect } from "react";
 
 import { Table } from "./Table/Table";
 import { Loader } from "./Loader/Loader";
+import { Message } from "./Message/Message";
 
 import { fetchUsers } from "../redux/users/usersOperations";
 import { selectFilters, selectIsLoading, selectUsers } from "../redux/users/usersSlice";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 import { getFilteredUsers } from "../helpers/getFilteredUsers";
-import { Message } from "./Message/Message";
 
 export const App = () => {
   const users = useAppSelector(selectUsers);
