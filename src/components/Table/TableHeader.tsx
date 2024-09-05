@@ -1,12 +1,27 @@
+import { SearchField } from "../SearchField/SearchField";
+
 export const TableHeader = () => {
   return (
-    <thead className="bg-tableHeaderBgColor text-tableHeaderTextColor font-montserrat-bold h-12">
+    <thead className="font-montserrat-bold bg-tableHeaderBgColor text-tableHeaderTextColor">
       <tr>
         <th className="number-column">№</th>
-        <th>Name</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Phone</th>
+        <th>
+          <p>Name</p>
+          <SearchField field="name" />
+        </th>
+
+        <th>
+          <p>Username</p>
+          <SearchField field="username" />
+        </th>
+        <th>
+          <p>Email</p>
+          <SearchField field="email" />
+        </th>
+        <th>
+          <p>Phone</p>
+          <SearchField field="phone" />
+        </th>
       </tr>
     </thead>
   );
