@@ -4,7 +4,7 @@ export const TableHeader = () => {
   return (
     <thead className="font-montserrat-bold bg-tableHeaderBgColor text-tableHeaderTextColor">
       <tr>
-        <th className="number-column">№</th>
+        <th className="number-column w-[40px]">№</th>
         <th>
           <p>Name</p>
           <SearchField field="name" />
