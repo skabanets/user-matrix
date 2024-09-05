@@ -4,11 +4,13 @@ import { Table } from "./Table/Table";
 import { Loader } from "./Loader/Loader";
 
 import { fetchUsers } from "../redux/users/usersOperations";
-import { selectIsLoading, selectUsers } from "../redux/users/usersSlice";
+import { selectFilters, selectIsLoading, selectUsers } from "../redux/users/usersSlice";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
+import { getFilteredUsers } from "../helpers/getFilteredUsers";
 
 export const App = () => {
   const users = useAppSelector(selectUsers);
+  const filter = useAppSelector(selectFilters);
   const isLoading = useAppSelector(selectIsLoading);
   const dispatch = useAppDispatch();
 
@@ -20,10 +22,12 @@ export const App = () => {
     return <Loader />;
   }
 
+  const filteredUsers = getFilteredUsers(users, filter);
+
   return (
     <main>
-      <section className="container pt-16">
-        <Table users={users} />
+      <section className="container pt-[100px]">
+        <Table users={filteredUsers} />
       </section>
     </main>
   );
